@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 public class UserDAOImpl implements UserDAO{
     private final SqlSessionFactory sessionFactory;
@@ -16,12 +17,17 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void insertUser(User user) {
-
+        try (SqlSession session = sessionFactory.openSession()) {
+            session.getMapper(UserMapper.class).insertUser(user);
+            session.commit();
+        }
     }
 
     @Override
-    public User getUserById(Integer userId) {
-        return null;
+    public Optional<User> getUserById(long userId) {
+        try (SqlSession session = sessionFactory.openSession()) {
+            return Optional.ofNullable(session.getMapper(UserMapper.class).getUserById(userId));
+        }
     }
 
     @Override
@@ -33,11 +39,17 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void updateUser(User user) {
-
+        try (SqlSession session = sessionFactory.openSession()) {
+            session.getMapper(UserMapper.class).updateUser(user);
+            session.commit();
+        }
     }
 
     @Override
-    public void deleteUser(Integer userId) {
-
+    public void deleteUser(long userId) {
+        try (SqlSession session = sessionFactory.openSession()) {
+            session.getMapper(UserMapper.class).deleteUser(userId);
+            session.commit();
+        }
     }
 }
