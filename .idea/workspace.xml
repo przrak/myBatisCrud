@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae6a9f90-48d2-4896-b716-0eec5c17cca6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/db/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/db/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/db/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/db/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/mappers/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/mappers/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/resources/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/pr1zrak/crud/CrudMybatisApplication$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/pr1zrak/crud/CrudMybatisApplication$1.class" afterDir="false" />
-    </list>
+    <list default="true" id="ae6a9f90-48d2-4896-b716-0eec5c17cca6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,10 +84,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/db/UserDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="195">
               <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -133,10 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/resources/UserResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
+            <state relative-caret-position="453">
               <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -470,7 +462,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563889830231</updated>
       <workItem from="1563889834806" duration="2360000" />
-      <workItem from="1563895966017" duration="7230000" />
+      <workItem from="1563895966017" duration="7388000" />
     </task>
     <task id="LOCAL-00001" summary="fix javadoc">
       <created>1563896449669</created>
@@ -486,11 +478,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563900110044</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="crud method added">
+      <created>1563903654202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1563903654202</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9590000" />
+    <option name="totallyTimeSpent" value="9748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -507,13 +506,13 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="Analysis" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
@@ -543,7 +542,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix javadoc" />
     <MESSAGE value="select all method added" />
-    <option name="LAST_COMMIT_MESSAGE" value="select all method added" />
+    <MESSAGE value="crud method added" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud method added" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -838,18 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/db/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-            <element signature="e#272#273#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/mappers/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -862,7 +850,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/resources/UserResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
+        <state relative-caret-position="453">
           <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -874,6 +862,18 @@
             <element signature="e#579#580#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
             <element signature="e#1037#1038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr1zrak/crud/db/UserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
           </folding>
         </state>
       </provider>
