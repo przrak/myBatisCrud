@@ -28,4 +28,28 @@
         <comment>A script to create a users table</comment>
     </changeSet>
 
+    <changeSet id="2" author="dima" context="DEV">
+        <insert tableName="user">
+            <column name="user_id" value="1"/>
+            <column name="email_id" value="dima@gmail.com"/>
+            <column name="password" value="dimapass"/>
+            <column name="first_name" value="Dmitry"/>
+            <column name="last_name" value="Vasilev"/>
+        </insert>
+        <insert tableName="user">
+            <column name="user_id" value="2"/>
+            <column name="email_id" value="alex@gmail.com"/>
+            <column name="password" value="alexpass"/>
+            <column name="first_name" value="Alexey"/>
+            <column name="last_name" value="Vlasov"/>
+        </insert>
+<!--        <rollback>-->
+<!--            <delete tableName="users">-->
+<!--                <where>-->
+<!--                    id=1-->
+<!--                </where>-->
+<!--            </delete>-->
+<!--        </rollback>-->
+    </changeSet>
+
 </databaseChangeLog>

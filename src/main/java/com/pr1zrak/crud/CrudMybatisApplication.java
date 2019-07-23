@@ -1,6 +1,10 @@
 package com.pr1zrak.crud;
 
 import com.loginbox.dropwizard.mybatis.MybatisBundle;
+import com.pr1zrak.crud.db.UserDAO;
+import com.pr1zrak.crud.db.UserDAOImpl;
+import com.pr1zrak.crud.mappers.UserMapper;
+import com.pr1zrak.crud.resources.UserResource;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.db.PooledDataSourceFactory;
@@ -12,7 +16,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 public class CrudMybatisApplication extends Application<CrudMybatisConfiguration> {
 
     private final MybatisBundle<CrudMybatisConfiguration> mybatisBundle
-            = new MybatisBundle<CrudMybatisConfiguration>() {
+            = new MybatisBundle<CrudMybatisConfiguration>(UserMapper.class) {
         @Override
         public DataSourceFactory getDataSourceFactory(CrudMybatisConfiguration configuration) {
             return configuration.getDataSourceFactory();
@@ -48,11 +52,13 @@ public class CrudMybatisApplication extends Application<CrudMybatisConfiguration
                     final Environment environment) {
         // TODO: implement application
 
-        SqlSessionFactory sessionFactory = mybatisBundle.getSqlSessionFactory();
+        final SqlSessionFactory sessionFactory = mybatisBundle.getSqlSessionFactory();
+        final UserDAO userDAO
+                = new UserDAOImpl(sessionFactory);
 
-//        environment.jersey().register(
-//                new BookmarksResource(sessionFactory)
-//        );
+        environment.jersey().register(
+                new UserResource(userDAO)
+        );
     }
 
 }
