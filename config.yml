@@ -3,8 +3,13 @@ logging:
   loggers:
     com.pr1zrak: DEBUG
 
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+
 database:
   driverClass: org.postgresql.Driver
   user: user
   password: password
-  url: jdbc:postgresql://localhost:5432/DropBookmarks
+  url: jdbc:postgresql://localhost:5432/mybatisCrud

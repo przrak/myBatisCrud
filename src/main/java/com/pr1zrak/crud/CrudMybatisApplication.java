@@ -3,6 +3,8 @@ package com.pr1zrak.crud;
 import com.loginbox.dropwizard.mybatis.MybatisBundle;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
+import io.dropwizard.db.PooledDataSourceFactory;
+import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,6 +15,14 @@ public class CrudMybatisApplication extends Application<CrudMybatisConfiguration
             = new MybatisBundle<CrudMybatisConfiguration>() {
         @Override
         public DataSourceFactory getDataSourceFactory(CrudMybatisConfiguration configuration) {
+            return configuration.getDataSourceFactory();
+        }
+    };
+
+    private final MigrationsBundle<CrudMybatisConfiguration> migrationsBundle
+            = new MigrationsBundle<CrudMybatisConfiguration>() {
+        @Override
+        public PooledDataSourceFactory getDataSourceFactory(CrudMybatisConfiguration configuration) {
             return configuration.getDataSourceFactory();
         }
     };
@@ -30,6 +40,7 @@ public class CrudMybatisApplication extends Application<CrudMybatisConfiguration
     public void initialize(final Bootstrap<CrudMybatisConfiguration> bootstrap) {
         // TODO: application initialization
         bootstrap.addBundle(mybatisBundle);
+        bootstrap.addBundle(migrationsBundle);
     }
 
     @Override
