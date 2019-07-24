@@ -8,8 +8,23 @@ server:
     - type: http
       port: 8080
 
+#database:
+#  driverClass: org.postgresql.Driver
+#  user: user
+#  password: password
+#  url: jdbc:postgresql://localhost:5432/mybatisCrud
+# the SQL query to run when validating a connection's liveness
+# validationQuery: "/* MyService Health Check */ SELECT 1"
+
+# the timeout before a connection validation queries fail
+# validationQueryTimeout: 3s
 database:
-  driverClass: org.postgresql.Driver
-  user: user
-  password: password
-  url: jdbc:postgresql://localhost:5432/mybatisCrud
+  driverClass: org.hsqldb.jdbcDriver
+  user: sa
+  password:
+  url: jdbc:hsqldb:file:C:/Projects/temp/mybatisCrud
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyService Health Check */ SELECT 1 from INFORMATION_SCHEMA.SYSTEM_USERS"
+
+  # the timeout before a connection validation queries fail
+  validationQueryTimeout: 3s

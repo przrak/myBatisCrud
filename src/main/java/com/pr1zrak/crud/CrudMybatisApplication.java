@@ -1,5 +1,8 @@
 package com.pr1zrak.crud;
 
+import com.codahale.metrics.jdbi3.strategies.TimedAnnotationNameStrategy;
+import com.google.common.base.Charsets;
+import com.google.common.io.Resources;
 import com.loginbox.dropwizard.mybatis.MybatisBundle;
 import com.pr1zrak.crud.db.UserDAO;
 import com.pr1zrak.crud.db.UserDAOImpl;
@@ -8,10 +11,14 @@ import com.pr1zrak.crud.resources.UserResource;
 import io.dropwizard.Application;
 import io.dropwizard.db.DataSourceFactory;
 import io.dropwizard.db.PooledDataSourceFactory;
+import io.dropwizard.jdbi3.JdbiFactory;
 import io.dropwizard.migrations.MigrationsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.jdbi.v3.core.Jdbi;
+
+import java.io.IOException;
 
 public class CrudMybatisApplication extends Application<CrudMybatisConfiguration> {
 
@@ -27,6 +34,7 @@ public class CrudMybatisApplication extends Application<CrudMybatisConfiguration
             = new MigrationsBundle<CrudMybatisConfiguration>() {
         @Override
         public PooledDataSourceFactory getDataSourceFactory(CrudMybatisConfiguration configuration) {
+
             return configuration.getDataSourceFactory();
         }
     };
@@ -49,8 +57,15 @@ public class CrudMybatisApplication extends Application<CrudMybatisConfiguration
 
     @Override
     public void run(final CrudMybatisConfiguration configuration,
-                    final Environment environment) {
+                    final Environment environment) throws IOException {
         // TODO: implement application
+
+        Jdbi dbi = new JdbiFactory(new TimedAnnotationNameStrategy()).build(environment,
+                configuration.getDataSourceFactory(), "h2");
+        dbi.useTransaction(h -> {
+            h.createScript(Resources.toString(Resources.getResource("init_hsqldb.sql"), Charsets.UTF_8)).execute();
+            h.createScript(Resources.toString(Resources.getResource("populate_hsqldb.sql"), Charsets.UTF_8)).execute();
+        });
 
         final SqlSessionFactory sessionFactory = mybatisBundle.getSqlSessionFactory();
         final UserDAO userDAO
